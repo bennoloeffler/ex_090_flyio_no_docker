@@ -1,0 +1,23 @@
+# fly.toml app configuration file generated for ex-090-flyio-no-docker on 2025-05-08T12:53:03+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'ex-090-flyio-no-docker'
+primary_region = 'fra'
+
+[build]
+  builder = 'paketobuildpacks/builder-jammy-base'
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1

@@ -4,7 +4,7 @@ set -e
 timestamp() { date -u +"%Y-%m-%dT%H-%M-%S"; }
 
 echo "[deploy_prod] Compiling requirements.txt..."
-uv pip compile --output requirements.txt
+uv pip compile pyproject.toml -o requirements.txt
 
 # Get last production tag
 LAST_TAG=$(git tag --list 'Production_*' --sort=-creatordate | head -n 1)
