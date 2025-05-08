@@ -1,0 +1,2 @@
+- [ ] first a minimal impl, to see if deploy on fly.io works
+- [ ] then step by step - you propose 
